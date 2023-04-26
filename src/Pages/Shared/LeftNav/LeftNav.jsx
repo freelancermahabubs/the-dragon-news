@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import RigthCards from "../../News/RigthCards/RigthCards";
 
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
@@ -16,7 +17,7 @@ const LeftNav = () => {
       <h4 className="mt-4">All Category</h4>
       <div className="ps-4">
         {categories.map((category) => (
-          <p key={categories.id}>
+          <p key={category.id}>
             <Link
               to={`/category/${category.id}`}
               className="text-decoration-none text-black"
@@ -26,6 +27,7 @@ const LeftNav = () => {
           </p>
         ))}
       </div>
+      <RigthCards />
     </div>
   );
 };
