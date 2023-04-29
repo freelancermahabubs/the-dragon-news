@@ -5,7 +5,9 @@ import RigthCards from "../../News/RigthCards/RigthCards";
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/categories`)
+    fetch(
+      `https://the-news-dragon-server-freelancermahabubs.vercel.app/categories`
+    )
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => {
