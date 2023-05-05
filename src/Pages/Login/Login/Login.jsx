@@ -3,11 +3,13 @@ import { useContext } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/Authprovider";
+import useTitle from "../../../useTitle";
 
 const Login = () => {
   const { singIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle("Login");
   const from = location.state?.from?.pathname || "/category/0";
   const handleLogin = (e) => {
     e.preventDefault();
